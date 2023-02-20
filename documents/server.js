@@ -1,3 +1,18 @@
+    const projectData = {};
+
+    const express = require('express');
+
+    const app = express();
+
+    //parse the json files coming from the client side.......
+    app.use(express.json());
+    app.use(express.urlencoded({extended:false}));
+
+    app.use(express.static("website"));
+
+
+
+
 // Setup empty JS object to act as endpoint for all routes
 // Express to run server and routes
 
