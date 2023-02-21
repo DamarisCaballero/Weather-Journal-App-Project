@@ -24,7 +24,7 @@ let newDate = d.toDateString();
 
 const getData = async (url) =>{
     try {   
-           const response = await fetch(url);
+            const response = await fetch(url);
             const result = await response.json();
             if(result.cod != 200){
                 return result;
@@ -122,19 +122,17 @@ const updateUI = async (info) => {
 generate.addEventListener("click", (e)=>{
     e.preventDefault();
     const madeURL = `${baseURI}${zip.value},${country.value}${key}`;
-    //fetch the url and get the data the needs to be sliced
-    getData(madeURL).
+    getData(madeURL);
     then((data)=>{
-    //get the info we want from the coming data of the weather
-    projectData(data).
+    projectData(data);
     then((info)=>{
-    //post the data to a url called "/add" 
-    postData("/add", info).
+   
+    postData("/add", info);
     then((data)=>{
-    //retrieve the data sent to the server from "/add" post 
-        retrieveData("/all").
+    
+        retrieveData("/all");
         then(data=>{
-    // now am able to update the ui with the data i got
+    
         updateUI(data);
         });
     });
