@@ -1,42 +1,85 @@
-setTimeout(() =>{
-    document.querySelector("body").style.opacity = '1';
-  },300);
-  
 
+     //global variables//
+    const apiKey = "&appid=a9a2c0598720047fa9f01191e0f24ef7&units=imperial";
+    const apiUrl = " http://localhost:4800";
 
-const generate = document.querySelector("#generate");
-const country = document.getElementById('country');
-const zip = document.getElementById('zip');
-const feelings = document.getElementById('feelings');
-const coming = document.querySelector(".coming");
-const key = "&appid=a9a2c0598720047fa9f01191e0f24ef7&units=imperial";
-const temp = document.getElementById('temp');
-const content = document.getElementById('content');
-const city = document.getElementById('city');
-const weather = document.getElementById('weather');
-const date = document.getElementById('date');
-const errorMessage = document.getElementById('message');
-const baseURI = "https://api.openweathermap.org/data/2.5/weather?zip=";
-const requestForm = "https://api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}";
-let d = new Date();
-let newDate = d.toDateString();
+    const zipCodeElement = document.getElementById('zip');
+    const feelingsCodeElement = document.getElementById('feelings');
+    const dateElement = document.getElementById('date');
+    const tempElement = document.getElementById('temp');
+    const contentElement = document.getElementById('content');
 
+    const catchError =(error) => console.log.error('Some error has been => ', error);
 
-const getData = async (url) =>{
-    try {   
-            const response = await fetch(url);
-            const result = await response.json();
-            if(result.cod != 200){
-                return result;
-                
-            }
-            return result;
-        }catch(e) {
-        console.log(e.message);
+    //event listener to add function to existing 
+
+    document.getElementById('generate').addEventListener('click', onGenerate);
+
+    //post data to API
+    function onGenerate(){
+        debugger
+        let data = {
+            zipCode: zipCodeElement.value,
+            content: feelingsCodeElement.value,
+            date: new Date()
+        };
+
+     //post data to api for f\get zip code
+     getZipCodeInformation(data.zipCode)
+     .then(zipInfo => {
+        //return and show alert if city is not found
+        if(zipInfo.cod != 200)
+            return alert(zipInfo.message)
+
+        //now post data to server for saving and displayin holder section
+        data.temp = zipInfo.list[0].main.temp;
+        postDataServer(data);
+     }).catch(catchError);
+    };
+
+//get zip code information from api//
+    async function getZipCodeInformation(zipCode) {
+      return await
+      (await 
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}${apiKey}`)).json()
     }
-};
 
 
+    //post data server for saving
+    async function postDataServer(data) {
+        let response = await fetch (`${apiUrl}postData`,{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json' },
+            body: JSON.stringify(data),   
+    });
+    try {
+        if(!response.ok) {
+            alert('Process Not Successfuly');
+            return;
+        }
+
+        response.json().then(data => {
+            if(response.ok)
+            updateUI();//update UI now
+            else
+            alert('Process not Successfuly');
+        }) catch(catchError);
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
     const projectData = async(data)=>{
      try{
         if(data.cod != 200){
