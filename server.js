@@ -10,15 +10,31 @@
 
     app.use(express.static("website"));
 
+    const cors = require('cors');
+   
+    app.use(cors());
 
 
+    app.post('/add', async (req, res) => {
+        const info = await req.body;
+        projectData = info;
+        res.send(projectData);
+    });
 
-// Setup empty JS object to act as endpoint for all routes
-// Express to run server and routes
 
-// Start up an instance of app
+    app.get("/all", async (req, res) => {
+        if(projectData){
+            res.send(projectData);
+        }
+    });
 
-/* Dependencies */
+
+    // Setup empty JS object to act as endpoint for all routes
+    // Express to run server and routes
+
+    // Start up an instance of app
+
+    /* Dependencies */
 /* Middleware*/
 
 //Here we are configuring express to use body-parser as middle-ware.
