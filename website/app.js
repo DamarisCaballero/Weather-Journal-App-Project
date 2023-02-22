@@ -1,7 +1,7 @@
 const { type } = require("express/lib/response");
 
      //global variables//
-    const apiKey = "4c192ee4cdf6417351e8c9e5e0e46371";
+    const apiKey = "70dda1ab0ba095ef2425a3a05350e56b";
     const apiUrl = " http://localhost:4800";
 
     const zipCodeElement = document.getElementById('zip');
