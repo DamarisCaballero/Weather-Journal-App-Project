@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>OpenWeatherMap App</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -25,11 +25,15 @@
       <div class="weather-form">
         <label for="country-input">Select Country:</label>
         <input type="text" id="country-input" placeholder="Enter country name">
+        <label for="date-input">Select Date:</label>
+        <input type="date" id="date-input">
+        <label for="postal-code-input">Enter Postal Code:</label>
+        <input type="text" id="postal-code-input" placeholder="Enter postal code">
         <button id="get-weather-btn">Get Weather</button>
       </div>
       <div class="weather-info" id="weather-info">
         <h3>Weather Information</h3>
-        <p class="loading">Please enter a country and click "Get Weather"</p>
+        <p class="loading">Please enter a country, date, and postal code, then click "Get Weather"</p>
       </div>
     </div>
   </main>
