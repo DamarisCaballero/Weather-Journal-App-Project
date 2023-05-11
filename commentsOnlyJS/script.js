@@ -9,7 +9,7 @@ function getWeather() {
 }
 
 function fetchWeatherData(position) {
-  const apiKey = 'TU_CLAVE_DE_API'; // Reemplaza 'TU_CLAVE_DE_API' con tu propia clave de API de OpenWeatherMap
+  const apiKey = bbb64996da474662892458f2e5047bf5 ; // Reemplaza 'TU_CLAVE_DE_API' con tu propia clave de API de OpenWeatherMap
   const { latitude, longitude } = position.coords;
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
