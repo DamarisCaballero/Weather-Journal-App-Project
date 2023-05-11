@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenWeatherMap App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <div class="container">
-        <h1>OpenWeatherMap App</h1>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -23,16 +21,14 @@
     <div class="container">
       <h2>Welcome to OpenWeatherMap App</h2>
       <div class="weather-form">
-        <label for="name-input">Enter Your Name:</label>
+        <label for="name-input">Your Name:</label>
         <input type="text" id="name-input" placeholder="Enter your name">
         <label for="country-input">Select Country:</label>
         <input type="text" id="country-input" placeholder="Enter country name">
-        <label for="date-input">Enter date:</label>
-
+        <label for="date-input">Select Date:</label>
         <input type="date" id="date-input">
         <label for="postal-code-input">Enter Postal Code:</label>
         <input type="text" id="postal-code-input" placeholder="Enter postal code">
-
         <button id="get-weather-btn">Get Weather</button>
       </div>
       <div class="weather-info" id="weather-info">
@@ -41,12 +37,9 @@
       </div>
     </div>
   </main>
-  
 
   <footer>
-    <div class="container">
-      <p>&copy; 2023 OpenWeatherMap App. All rights reserved.</p>
-    </div>
+    <p>&copy; 2023 OpenWeatherMap App. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
