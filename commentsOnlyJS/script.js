@@ -39,3 +39,25 @@ function updateWeatherInfo(weatherInfo) {
   `;
   weatherInfoDiv.innerHTML = weatherHTML;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const nameInput = document.getElementById("name-input");
+    const getWeatherBtn = document.getElementById("get-weather-btn");
+    const weatherInfo = document.getElementById("weather-info");
+  
+    getWeatherBtn.addEventListener("click", function() {
+      const name = nameInput.value;
+  
+      if (name === "") {
+        weatherInfo.innerHTML = "<p class='error'>Please enter your name</p>";
+        return;
+      }
+  
+      weatherInfo.innerHTML = `
+        <h3>Weather Information</h3>
+        <p>Your name: ${name}</p>
+        <p class="loading">Please enter a country, date, and postal code, then click "Get Weather"</p>
+      `;
+    });
+  });
+  

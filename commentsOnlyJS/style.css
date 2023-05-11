@@ -56,13 +56,13 @@ h2 {
 }
 
 .weather-form {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .weather-form label {
   display: block;
   font-size: 18px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
