@@ -1,28 +1,95 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    text-align: center;
+    background-image: url("./img/backgraund.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
   }
   
-  h1 {
-    color: #333;
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
   }
   
-  #weather-info {
-    margin-top: 20px;
-    background-color: #fff;
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  main {
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+  }
+  
+  .weather-form {
+    margin-bottom: 20px;
+  }
+  
+  .weather-form label {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .weather-form input[type="text"] {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  .weather-form button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .weather-info {
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  #weather-info h2 {
-    color: #555;
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
   }
   
-  #weather-info p {
-    color: #888;
+  footer p {
+    margin: 0;
+    font-size: 14px;
   }
-  
   
