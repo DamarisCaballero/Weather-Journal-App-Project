@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenWeatherMap App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Welcome to OpenWeatherMap App</h2>
+      <div class="weather-form">
+        <label for="name-input">Your Name:</label>
+        <input type="text" id="name-input" placeholder="Enter your name">
+        <label for="country-input">Select Country:</label>
+        <input type="text" id="country-input" placeholder="Enter country name">
+        <label for="date-input">Select Date:</label>
+        <input type="date" id="date-input">
+        <label for="postal-code-input">Enter Postal Code:</label>
+        <input type="text" id="postal-code-input" placeholder="Enter postal code">
+        <button id="get-weather-btn">Get Weather</button>
+      </div>
+      <div class="weather-info" id="weather-info">
+        <h3>Weather Information</h3>
+        <p class="loading">Please enter your name, country, date, and postal code, then click "Get Weather"</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 OpenWeatherMap App. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
