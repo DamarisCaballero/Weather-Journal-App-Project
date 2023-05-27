@@ -27,28 +27,92 @@ header h1 {
   font-size: 24px;
   font-weight: bold;
 }
+/******* navbar ****************/
+/* Estilos generales */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
 
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 nav ul li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+  color: #03bb06;
+}
+
+/* Estilos para el botón de navegación en pantallas pequeñas */
+.nav-toggle {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-collapse {
+    display: none;
+    background-color: #333;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+
+  .nav-collapse ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .nav-collapse ul li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/******* navbar ****************/
 main {
   flex-grow: 1;
   text-align: center;
   margin-top: 50px;
-  color: #0018f0;
+  color: #2508b4;
 }
 
 h2 {
